@@ -1,0 +1,40 @@
+name: Compilar e comparar AVR e ARM
+on:
+  push:
+    paths:
+      - 'comparativo.ino'
+      - 'medir_binarios.py'
+      - '.github/workflows/comparar-binarios.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+        with:
+          version: '1.3.1'
+      - name: Instalar plataformas e registrar versoes
+        run: |
+          arduino-cli config init
+          arduino-cli config add board_manager.additional_urls https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr@1.8.6
+          arduino-cli core install rp2040:rp2040@6.1.0
+          arduino-cli version
+          arduino-cli core list
+      - name: Compilar as duas implementacoes
+        run: |
+          mkdir -p native/Semaforo build/avr build/arm
+          cp comparativo.ino native/Semaforo/Semaforo.ino
+          arduino-cli compile --fqbn arduino:avr:uno --output-dir build/avr native/Semaforo
+          arduino-cli compile --fqbn rp2040:rp2040:rpipico --output-dir build/arm native/Semaforo
+      - name: Medir secoes dos ELF
+        run: python3 medir_binarios.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: binarios-e-medicoes
+          path: build/

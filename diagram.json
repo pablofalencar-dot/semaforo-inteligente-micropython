@@ -8,7 +8,9 @@
       "id": "pico",
       "top": 30,
       "left": 0,
-      "attrs": {}
+      "attrs": {
+        "env": "micropython-20260406-v1.28.0"
+      }
     },
     {
       "type": "wokwi-led",

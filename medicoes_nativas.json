@@ -1,0 +1,11 @@
+{
+  "evidencia": "https://github.com/pablofalencar-dot/semaforo-inteligente-micropython/actions/runs/40933590494",
+  "commit": "6b10f157d33991289ebb0143fdf80a73eac6d122",
+  "status": "success",
+  "arduino_cli": "1.3.1",
+  "core_avr": "arduino:avr@1.8.6",
+  "core_arm": "rp2040:rp2040@6.1.0",
+  "metodo": "GNU size -B; flash = text + data; ram_estatica = data + bss",
+  "avr": {"text": 1740, "data": 24, "bss": 20, "flash_bytes": 1764, "ram_estatica_bytes": 44},
+  "arm": {"text": 315244, "data": 12032, "bss": 6652, "flash_bytes": 327276, "ram_estatica_bytes": 18684}
+}

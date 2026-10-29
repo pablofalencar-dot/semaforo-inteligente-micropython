@@ -1,0 +1,13 @@
+test_botao_amarelo_nao_prolonga (__main__.Logica.test_botao_amarelo_nao_prolonga) ... ok
+test_botao_verde (__main__.Logica.test_botao_verde) ... ok
+test_botao_vermelho_renova_janela (__main__.Logica.test_botao_vermelho_renova_janela) ... ok
+test_ciclo_limites (__main__.Logica.test_ciclo_limites) ... ok
+test_diagrama (__main__.Logica.test_diagrama) ... ok
+test_integracao_irq_registradores_debounce (__main__.Logica.test_integracao_irq_registradores_debounce) ... ok
+test_wrap_contador (__main__.Logica.test_wrap_contador) ... ok
+test_x_configuravel_limita_bonus (__main__.Logica.test_x_configuravel_limita_bonus) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.022s
+
+OK

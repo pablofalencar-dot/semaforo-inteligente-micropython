@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "author": "Projeto academico",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 30,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "vermelho",
+      "top": 25,
+      "left": 270,
+      "attrs": {
+        "color": "red",
+        "label": "VERMELHO"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "top": 65,
+      "left": 160,
+      "rotate": 0,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "amarelo",
+      "top": 115,
+      "left": 270,
+      "attrs": {
+        "color": "yellow",
+        "label": "AMARELO"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 155,
+      "left": 160,
+      "rotate": 0,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "verde",
+      "top": 205,
+      "left": 270,
+      "attrs": {
+        "color": "green",
+        "label": "VERDE"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 245,
+      "left": 160,
+      "rotate": 0,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "pedestre",
+      "top": 330,
+      "left": 230,
+      "attrs": {
+        "color": "blue",
+        "label": "PEDESTRE",
+        "key": "P"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP13",
+      "r0:1",
+      "red",
+      []
+    ],
+    [
+      "r0:2",
+      "vermelho:A",
+      "red",
+      []
+    ],
+    [
+      "vermelho:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP14",
+      "r1:1",
+      "yellow",
+      []
+    ],
+    [
+      "r1:2",
+      "amarelo:A",
+      "yellow",
+      []
+    ],
+    [
+      "amarelo:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP15",
+      "r2:1",
+      "green",
+      []
+    ],
+    [
+      "r2:2",
+      "verde:A",
+      "green",
+      []
+    ],
+    [
+      "verde:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP16",
+      "pedestre:1.l",
+      "blue",
+      []
+    ],
+    [
+      "pedestre:2.l",
+      "pico:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
